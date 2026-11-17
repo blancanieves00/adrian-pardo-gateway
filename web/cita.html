@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Pide tu cita · Adrián Pardo</title>
+<meta name="description" content="Responde unas preguntas y conoce el tiempo y presupuesto orientativo de tu servicio de color. Luego pide cita por WhatsApp.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FAF7F2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/cita.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side" aria-hidden="true">
+    <div id="sideimgs"></div>
+    <div class="side-in">
+      <a class="logo" href="index.html" tabindex="-1"><span class="mk">AP</span><span class="nm">Adrián Pardo<span>Hair Studio</span></span></a>
+      <div>
+        <div class="motto">Menos ruido,<i>más intención.</i></div>
+        <small>Premio Picasso 2025 · Málaga</small>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="top">
+      <a class="logo" href="index.html"><span class="mk">AP</span><span class="nm">Adrián Pardo<span>Hair Studio</span></span></a>
+      <span></span>
+      <a class="exit" href="index.html">Volver a la web</a>
+    </div>
+    <div class="bar" id="bar" role="progressbar" aria-label="Progreso del cuestionario"><i></i></div>
+    <div class="stage" id="stage"></div>
+    <div class="sr" id="live" aria-live="polite"></div>
+  </main>
+</div>
+
+<noscript><p style="padding:2rem">Este cuestionario necesita JavaScript. Escríbeme directamente por <a href="https://wa.me/34677427724">WhatsApp</a>.</p></noscript>
+<script src="assets/cita-data.js"></script>
+<script src="assets/cita-core.js"></script>
+<script src="assets/cita.js"></script>
+</body>
+</html>

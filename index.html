@@ -66,7 +66,7 @@
       <div class="status" id="status" role="status" aria-live="polite">Comprobando disponibilidad…</div>
       <div class="links">
         <a id="go-primary" href="https://adrian-pardo.pages.dev/">Abrir la web</a>
-        <a id="go-mirror" class="secondary" href="https://adrian-pardo.netlify.app/">Abrir la copia de respaldo</a>
+        <a id="go-mirror" class="secondary" href="https://blancanieves00.github.io/adrian-pardo-gateway/web/">Abrir la copia de respaldo</a>
       </div>
       <div class="wa">¿No carga ninguna? Escríbeme por <a href="https://wa.me/34677427724">WhatsApp</a>.</div>
     </main>
@@ -75,10 +75,11 @@
       // ── Configuración ─────────────────────────────────────────────
       // PRIMARY: la web en Cloudflare (cuando el dominio esté traspasado,
       //          cambiar por https://www.adrianpardohairstudio.com/).
-      // MIRROR:  copia en Netlify (fuera de Cloudflare) para cuando LaLiga
-      //          bloquea las IPs de Cloudflare.
+      // MIRROR:  copia en GitHub Pages (carpeta web/ de este mismo repo, fuera de
+      //          Cloudflare) para cuando LaLiga bloquea las IPs de Cloudflare.
+      //          La sincroniza push.sh del repo de la web.
       const PRIMARY = "https://adrian-pardo.pages.dev/";
-      const MIRROR = "https://adrian-pardo.netlify.app/";
+      const MIRROR = "https://blancanieves00.github.io/adrian-pardo-gateway/web/";
       const PROBE = "favicon.png";
       const TIMEOUT_MS = 3500;
       const status = document.querySelector("#status");

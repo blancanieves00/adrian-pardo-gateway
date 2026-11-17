@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa del cuestionario · uso interno</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF7F2;--pale:#F1EAE0;--ink:#211C1A;--muted:#7C7168;--sage:#8AA194;--sage-d:#6E8578;--terra:#BD8E7C;--line:rgba(33,28,26,.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Jost',sans-serif;font-weight:300;background:var(--bg);color:var(--ink);padding:clamp(1.5rem,4vw,4rem);line-height:1.55}
+h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05}
+h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.8rem;margin:3rem 0 1rem}
+.meta{color:var(--muted);margin:.8rem 0 2rem;max-width:70ch}
+.warn{display:inline-block;background:var(--terra);color:#fff;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;padding:.45rem .8rem;margin-bottom:1.4rem}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th,td{text-align:left;padding:.75rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:400;position:sticky;top:0;background:var(--bg)}
+td.path{max-width:320px}
+.tag{display:inline-block;font-size:.66rem;border:1px solid var(--line);padding:.15rem .45rem;margin:0 .2rem .25rem 0}
+td.res b{font-weight:400}
+td.est span{display:block;font-family:'Cormorant Garamond',serif;font-size:1.15rem;line-height:1.1}
+td.est small{color:var(--muted);font-size:.75rem}
+td a{color:var(--sage-d);font-size:.72rem;letter-spacing:.1em}
+tr:hover td{background:var(--pale)}
+.tree{font-size:.92rem}
+.tree li{list-style:none;margin:.25rem 0 .25rem 1.2rem;padding-left:.8rem;border-left:1px solid var(--line)}
+.tree .q{font-family:'Cormorant Garamond',serif;font-size:1.2rem}
+.tree .r{color:var(--sage-d)}
+.wrap{overflow-x:auto}
+</style>
+</head>
+<body>
+<div id="warn"></div>
+<h1>Mapa del cuestionario</h1>
+<p class="meta" id="meta"></p>
+
+<h2>Todos los caminos</h2>
+<p class="meta">Cada fila es una forma de terminar el cuestionario. «Probar» abre ese camino ya respondido. Para cambiar una cifra o una pregunta, edita <code>assets/cita-data.js</code>.</p>
+<div class="wrap"><table id="paths"></table></div>
+
+<h2>Árbol de preguntas</h2>
+<div class="tree" id="tree"></div>
+
+<script src="assets/cita-data.js"></script>
+<script src="assets/cita-core.js"></script>
+<script>
+const D = AP_CITA_DATA, C = AP_CITA;
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+if (D.provisional) document.getElementById('warn').innerHTML = '<span class="warn">Precios de la carta de Adrián · recargo por largo provisional</span>';
+const paths = C.enumerate(D);
+document.getElementById('meta').textContent = `Versión ${D.version} · actualizado ${D.updated} · ${paths.length} caminos · ${Object.keys(D.nodes).length} preguntas · ${Object.keys(D.results).length} resultados`;
+
+const head = `<tr><th>Servicio</th><th>Respuestas</th><th>Resultado</th><th>Opción</th>${D.lengths.map(l => `<th>${esc(l.label)}</th>`).join('')}<th></th></tr>`;
+const rows = paths.flatMap(p => {
+  const s = D.services.find(x => x.id === p.service), r = D.results[p.resultId];
+  const tiers = C.tiersOf(D, p.resultId);
+  if (!tiers.length) return [`<tr><td>${esc(s.label)}</td><td class="path">${p.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('') || '<small>—</small>'}</td><td class="res"><b>${esc(r.title)}</b></td><td>—</td>${D.lengths.map(() => '<td class="est"><small>consulta</small></td>').join('')}<td><a href="cita.html#${C.toHash({ service: p.service, choices: p.choices })}" target="_blank">Probar →</a></td></tr>`];
+  return tiers.map(t => {
+    const cells = D.lengths.map(l => { const e = C.estimate(D, p.resultId, l.id, t.id); return `<td class="est"><span>${C.fmtEur(e.eur)}</span><small>${C.fmtTime(e)}${e.pending ? ` · <b style="color:#BD8E7C">${e.pending} pendiente</b>` : ''}</small></td>`; }).join('');
+    const hash = C.toHash({ service: p.service, choices: p.choices, length: 'medio', tier: t.id });
+    return `<tr><td>${esc(s.label)}</td><td class="path">${p.tags.map(x => `<span class="tag">${esc(x)}</span>`).join('')}</td><td class="res"><b>${esc(r.title)}</b>${p.allergy ? ' <span class="tag" style="border-color:#BD8E7C;color:#9a6a58">prueba alergia</span>' : ''}<br><small>${t.items.map(i => esc(D.menu[i].label)).join(' + ')}</small></td><td>${esc(t.label)}</td>${cells}<td><a href="cita.html#${hash}" target="_blank">Probar →</a></td></tr>`;
+  });
+}).join('');
+document.getElementById('paths').innerHTML = head + rows;
+
+function tree(nodeId) {
+  const n = D.nodes[nodeId];
+  return `<ul><li><span class="q">${esc(n.q)}</span><ul>${n.options.map(o => `<li>${esc(o.label)} ${
+    C.isResult(o.next) ? `→ <span class="r">${esc(D.results[o.next.slice(2)].title)}</span>` : tree(o.next)}</li>`).join('')}</ul></li></ul>`;
+}
+document.getElementById('tree').innerHTML = D.services.map(s =>
+  `<h3 style="font-weight:400;margin-top:1.4rem">${esc(s.label)}</h3>${s.active ? tree(s.start) : '<ul><li>Sin cuestionario todavía → consulta directa por WhatsApp</li></ul>'}`).join('');
+</script>
+</body>
+</html>

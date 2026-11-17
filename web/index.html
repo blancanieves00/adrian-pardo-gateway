@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Adrián Pardo · Colorista, posticero y formador · Málaga</title>
+<meta name="description" content="Colorimetría de autor, posticería y formación. Premio Picasso 2025 a mejor colección femenina y mejor maquillaje de vanguardia. Studio en Málaga centro.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#211C1A">
+<meta property="og:title" content="Adrián Pardo Hair Studio">
+<meta property="og:description" content="Menos ruido, más intención. Color de autor en Málaga.">
+<meta property="og:image" content="img/w/femme-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/w/femme-1.jpg">
+<style>
+:root{
+  --cream:#DBCBB8; --pale:#F1EAE0; --bg:#FAF7F2;
+  --sage:#8AA194; --sage-d:#6E8578; --terra:#BD8E7C;
+  --ink:#211C1A; --ink2:#2A2421; --muted:#7C7168;
+  --line:rgba(33,28,26,.12); --line-l:rgba(219,203,184,.16);
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
+  --pad:clamp(1.25rem,5vw,5.5rem); --max:1640px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;background:var(--bg);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--terra);color:#fff}
+:focus-visible{outline:2px solid var(--sage);outline-offset:3px}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.d{font-family:var(--serif);font-weight:300;line-height:1.02;letter-spacing:-.01em}
+.i{font-style:italic}
+.lbl{font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;font-weight:400}
+.muted{color:var(--muted)}
+section{position:relative}
+.sec{padding:clamp(6rem,12vw,12rem) 0}
+.dark{background:var(--ink);color:var(--cream)}
+.dark .muted{color:rgba(219,203,184,.62)}
+.btn{display:inline-flex;align-items:center;gap:.9rem;padding:1.15rem 2.6rem;font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;border:1px solid currentColor;transition:background .4s,color .4s,border-color .4s}
+.btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.dark .btn:hover,.btn.l:hover{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.btn.fill{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.btn.fill:hover{background:#fff;border-color:#fff}
+.arrow{display:inline-block;transition:transform .4s}
+.btn:hover .arrow{transform:translateX(5px)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1.2s cubic-bezier(.2,.7,.2,1),transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.marquee-t{animation:none!important}}
+
+/* image frames */
+.ph{position:relative;overflow:hidden;background:var(--ink2)}
+.ph img,.ph video{width:100%;height:100%;object-fit:cover;transition:transform 1.8s cubic-bezier(.2,.7,.2,1)}
+.ph:hover img{transform:scale(1.035)}
+.cap{display:flex;justify-content:space-between;gap:1rem;margin-top:.8rem;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.dark .cap{color:rgba(219,203,184,.5)}
+
+/* preview */
+.pv{position:relative;z-index:300;background:#14100f;color:rgba(219,203,184,.55);font-size:.55rem;letter-spacing:.34em;text-transform:uppercase;text-align:center;padding:.45rem}
+
+/* ── nav ─────────────────────────────── */
+header{position:fixed;inset:0 0 auto;z-index:200;padding:1.6rem 0;transition:background .5s,padding .5s,border-color .5s;border-bottom:1px solid transparent}
+header.solid{background:rgba(250,247,242,.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:.85rem 0;border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:2rem;max-width:var(--max);margin:0 auto;padding:0 var(--pad);color:var(--cream);transition:color .5s}
+header.solid .nav{color:var(--ink)}
+.logo{display:flex;align-items:center;gap:.9rem}
+.logo .mk{width:42px;height:42px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1rem;font-style:italic}
+.logo .nm{font-size:.74rem;letter-spacing:.34em;text-transform:uppercase;line-height:1.35}
+.logo .nm span{display:block;font-size:.52rem;opacity:.6}
+.nav ul{display:flex;gap:2.3rem;list-style:none}
+.nav ul a{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;position:relative;padding:.3rem 0}
+.nav ul a::after{content:'';position:absolute;left:0;right:100%;bottom:0;height:1px;background:currentColor;transition:right .4s}
+.nav ul a:hover::after{right:0}
+.ncta{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;border:1px solid currentColor;padding:.85rem 1.6rem;transition:.4s;white-space:nowrap}
+.ncta:hover{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+header.solid .ncta:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media(max-width:1180px){.nav ul{display:none}}
+
+/* ── hero ────────────────────────────── */
+.hero{min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,44%);background:var(--ink);color:var(--cream);position:relative}
+.hero-txt{display:flex;flex-direction:column;justify-content:flex-end;padding:9rem var(--pad) clamp(3rem,6vw,5.5rem);position:relative;z-index:2}
+.hero .lbl{color:var(--sage);margin-bottom:2.2rem}
+.hero h1{font-size:clamp(3.2rem,6.6vw,8.4rem)}
+.hero h1 .nw{white-space:nowrap}
+.hero h1 .i{display:block;color:#fff;padding-left:.55em}
+.hero-en{font-size:.58rem;letter-spacing:.46em;text-transform:uppercase;color:rgba(219,203,184,.45);margin:1.6rem 0 2.6rem}
+.hero-foot{display:flex;flex-direction:column-reverse;gap:2rem;border-top:1px solid var(--line-l);padding-top:2.2rem}
+.hero-foot p{max-width:38ch;color:rgba(219,203,184,.75)}
+.hero-acts{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero-img{position:relative;overflow:hidden}
+.hero-img img{position:absolute;inset:0 0 0 -2px;width:calc(100% + 2px);width:100%;height:100%;object-fit:cover;object-position:50% 20%;animation:heroIn 2.4s cubic-bezier(.2,.7,.2,1) both}
+@keyframes heroIn{from{transform:scale(1.08);opacity:0}to{transform:none;opacity:1}}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--ink) 0%,rgba(33,28,26,0) 22%)}
+.hero-cap{position:absolute;right:var(--pad);bottom:2rem;z-index:2;text-align:right;font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.hero-cap b{display:block;font-family:var(--serif);font-style:italic;font-weight:300;font-size:1.25rem;letter-spacing:0;text-transform:none;color:#fff}
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;grid-template-rows:72svh auto}
+  .hero-img{grid-row:1}.hero-txt{grid-row:2;padding-top:2.4rem}
+  .hero-img::after{background:linear-gradient(0deg,var(--ink) 0%,rgba(33,28,26,0) 35%)}
+}
+
+/* ── marquee ─────────────────────────── */
+.marquee{background:var(--ink);color:var(--cream);border-top:1px solid var(--line-l);overflow:hidden;padding:1.5rem 0}
+.marquee-t{display:flex;gap:3.5rem;width:max-content;animation:mq 60s linear infinite}
+.marquee span{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,1.8vw,1.6rem);white-space:nowrap;display:flex;align-items:center;gap:3.5rem}
+.marquee span::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--terra)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ── manifiesto ──────────────────────── */
+.man{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);gap:clamp(3rem,8vw,9rem);align-items:center}
+.man .ph{aspect-ratio:3/4.4}
+.man blockquote{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,5.6vw,5.8rem);line-height:1.02;margin:1.8rem 0 2.8rem}
+.man blockquote i{color:var(--sage-d)}
+.man p{max-width:48ch;color:var(--muted);margin-bottom:1.2rem;font-size:1.02rem}
+.man p strong{color:var(--ink);font-weight:400}
+.firma{font-family:var(--serif);font-style:italic;font-size:2rem;color:var(--ink);margin-top:2rem}
+.firma small{display:block;font-family:var(--sans);font-style:normal;font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);margin-top:.3rem}
+@media(max-width:900px){.man{grid-template-columns:1fr}.man .ph{max-width:460px}}
+
+/* ── section heads ───────────────────── */
+.sh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem 6rem;align-items:end;margin-bottom:clamp(3.5rem,7vw,6.5rem)}
+.sh .lbl{color:var(--sage-d);margin-bottom:1.6rem}
+.dark .sh .lbl{color:var(--sage)}
+.sh h2{font-size:clamp(3rem,7.5vw,7.6rem)}
+.sh p{max-width:44ch;color:var(--muted);font-size:1.02rem}
+.dark .sh p{color:rgba(219,203,184,.66)}
+@media(max-width:900px){.sh{grid-template-columns:1fr}}
+
+/* ── colecciones ─────────────────────── */
+.coll{padding:clamp(4rem,8vw,8rem) 0;border-top:1px solid var(--line-l)}
+.coll:first-of-type{border-top:0}
+.coll-h{display:grid;grid-template-columns:auto 1fr auto;gap:1rem 3rem;align-items:end;margin-bottom:clamp(2.2rem,4vw,3.5rem)}
+.coll-n{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--terra)}
+.coll-t{font-family:var(--serif);font-weight:300;font-size:clamp(3.2rem,9vw,9.5rem);line-height:.92;letter-spacing:-.015em}
+.coll-a{text-align:right;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(219,203,184,.6);line-height:2}
+.coll-a b{display:block;color:var(--cream);font-weight:400}
+.coll-g{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(.6rem,1.2vw,1.2rem);align-items:start}
+.coll-g .ph{aspect-ratio:4/5}
+.c-a{grid-column:span 5}.c-b{grid-column:span 4;margin-top:clamp(3rem,8vw,9rem)}.c-c{grid-column:span 3;margin-top:clamp(1rem,3vw,3rem)}
+.c-w{grid-column:span 7}.c-w .ph{aspect-ratio:16/9}
+.coll-p{max-width:40ch;color:rgba(219,203,184,.7);font-size:.98rem;margin-top:2.4rem}
+@media(max-width:900px){.coll-h{grid-template-columns:1fr}.coll-a{text-align:left}.c-a,.c-b,.c-c,.c-w{grid-column:span 12;margin-top:0}.c-b,.c-c{grid-column:span 6}}
+
+/* ── prensa ──────────────────────────── */
+.press-names{display:flex;flex-wrap:wrap;gap:1rem 3.5rem;align-items:baseline;justify-content:center;padding:2.6rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:clamp(3rem,6vw,5rem)}
+.press-names span{font-family:var(--serif);font-size:clamp(1.2rem,2.1vw,2rem);letter-spacing:.06em;white-space:nowrap}
+.press-names .vg{font-family:'Didot','Bodoni 72',var(--serif);letter-spacing:.14em;font-weight:400}
+.press-names small{font-family:var(--sans);font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.press-g{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.6rem,1.4vw,1.4rem)}
+.press-g .ph{aspect-ratio:4/5;background:var(--pale)}
+.press-g .ph.contain img{object-fit:contain;padding:6%}
+@media(max-width:900px){.press-g{grid-template-columns:repeat(2,1fr)}}
+
+/* ── studio work ─────────────────────── */
+.work{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(.6rem,1.2vw,1.2rem)}
+.work .ph{aspect-ratio:3/4}
+.w-v{grid-column:span 4;grid-row:span 2}.w-v .ph{aspect-ratio:auto;height:100%}
+.w-s{grid-column:span 4}
+@media(max-width:900px){.w-v{grid-column:span 12;grid-row:auto}.w-v .ph{aspect-ratio:9/14}.w-s{grid-column:span 6}}
+
+/* ── split feature (posticería, formación…) ─ */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(3rem,7vw,8rem);align-items:center}
+.split h2{font-size:clamp(2.8rem,6vw,6rem);margin:1.6rem 0 2rem}
+.split p{color:var(--muted);max-width:46ch;margin-bottom:1.1rem;font-size:1.02rem}
+.dark .split p{color:rgba(219,203,184,.7)}
+.split .lbl{color:var(--sage-d)}
+.dark .split .lbl{color:var(--sage)}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;margin:2rem 0 2.6rem}
+.tag{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;border:1px solid var(--line);padding:.55rem 1rem;color:var(--muted)}
+.dark .tag{border-color:var(--line-l);color:rgba(219,203,184,.75)}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.5rem,1vw,1rem)}
+.mosaic .ph{aspect-ratio:3/4}
+.mosaic .tall{grid-row:span 2;aspect-ratio:auto}
+@media(max-width:900px){.split{grid-template-columns:1fr}}
+
+/* ── novias ──────────────────────────── */
+.nov{display:grid;grid-template-columns:1.1fr .9fr 1fr;gap:clamp(.6rem,1.2vw,1.2rem);align-items:end}
+.nov .ph:nth-child(1){aspect-ratio:3/4.4}.nov .ph:nth-child(2){aspect-ratio:3/4}.nov .ph:nth-child(3){aspect-ratio:3/3.6}
+@media(max-width:900px){.nov{grid-template-columns:1fr 1fr}.nov .ph:nth-child(1){grid-column:span 2}}
+
+/* ── carta ───────────────────────────── */
+.carta{columns:2;column-gap:clamp(3rem,7vw,8rem)}
+.cg{margin-bottom:3.5rem;break-inside:avoid;display:inline-block;width:100%}
+.cg h3{font-family:var(--serif);font-style:italic;font-weight:300;font-size:2.2rem;margin-bottom:1rem;color:var(--sage-d)}
+.ci{display:grid;grid-template-columns:1fr auto auto;gap:1.4rem;align-items:baseline;padding:1rem 0;border-bottom:1px solid var(--line)}
+.ci .n{font-size:.98rem}
+.ci .n em{font-style:normal;font-size:.5rem;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);border:1px solid rgba(189,142,124,.5);padding:.2rem .45rem;margin-left:.5rem;vertical-align:middle}
+.ci .n small{display:block;font-size:.76rem;color:var(--muted)}
+.ci .tm{font-size:.78rem;color:var(--muted);white-space:nowrap}
+.ci .p{font-family:var(--serif);font-size:1.35rem;white-space:nowrap;min-width:4.5rem;text-align:right}
+.ci .p small{font-family:var(--sans);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-right:.35rem}
+.carta-cta{display:flex;flex-wrap:wrap;gap:2rem 4rem;align-items:center;justify-content:space-between;background:var(--ink);color:var(--cream);padding:clamp(2.2rem,4vw,3.4rem) clamp(1.8rem,4vw,3.4rem);margin-top:1rem}
+.carta-cta h3{font-family:var(--serif);font-weight:300;font-size:clamp(1.8rem,3.4vw,2.8rem);line-height:1.1;max-width:22ch}
+.carta-cta p{color:rgba(219,203,184,.65);font-size:.92rem;margin-top:.6rem;max-width:52ch}
+.carta-note{font-size:.82rem;color:var(--muted);margin-top:1.6rem;max-width:80ch}
+@media(max-width:900px){.carta{columns:1}}
+
+/* ── formación (video) ───────────────── */
+.vid{aspect-ratio:9/14;max-height:86vh}
+.vid video{width:100%;height:100%;object-fit:cover}
+.credit{font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(219,203,184,.45);margin-top:.8rem}
+
+/* ── testimonios ─────────────────────── */
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(2rem,4vw,4rem)}
+.t{border-top:1px solid var(--line);padding-top:2rem}
+.t .s{color:var(--terra);letter-spacing:.34em;font-size:.68rem;margin-bottom:1.3rem}
+.t p{font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.55;margin-bottom:1.6rem}
+.t cite{font-style:normal;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase}
+.t cite span{display:block;color:var(--muted);margin-top:.35rem}
+@media(max-width:900px){.tg{grid-template-columns:1fr}}
+
+/* ── contacto ────────────────────────── */
+.cta-big{font-size:clamp(3.2rem,9vw,9.5rem)}
+.cgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(3rem,7vw,8rem);margin-top:clamp(3rem,6vw,5rem)}
+.cb{padding:1.4rem 0;border-bottom:1px solid var(--line-l)}
+.cb b{display:block;font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:var(--sage);font-weight:400;margin-bottom:.5rem}
+.cb p,.cb a{color:rgba(219,203,184,.88)}
+.cb a:hover{color:#fff}
+.hr{display:flex;justify-content:space-between;padding:.25rem 0;font-size:.92rem;color:rgba(219,203,184,.82)}
+@media(max-width:900px){.cgrid{grid-template-columns:1fr}}
+footer{background:#14100f;color:rgba(219,203,184,.4);padding:2.2rem 0;font-size:.68rem;letter-spacing:.12em}
+.ft{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.ft a:hover{color:var(--cream)}
+
+.wa{position:fixed;right:1.5rem;bottom:1.5rem;z-index:150;width:56px;height:56px;border-radius:50%;background:var(--sage);display:grid;place-items:center;box-shadow:0 10px 30px rgba(20,16,15,.3);transition:.35s;opacity:0;pointer-events:none;transform:translateY(10px)}
+.wa.on{opacity:1;pointer-events:auto;transform:none}
+.wa:hover{background:var(--sage-d);transform:translateY(-3px)}
+</style>
+</head>
+<body>
+
+
+
+<header id="hd">
+  <div class="nav">
+    <a class="logo" href="#"><span class="mk">AP</span><span class="nm">Adrián Pardo<span>Hair Studio</span></span></a>
+    <ul>
+      <li><a href="#colecciones">Colecciones</a></li>
+      <li><a href="#studio">Color</a></li>
+      <li><a href="#posticeria">Posticería</a></li>
+      <li><a href="#novias">Novias y eventos</a></li>
+      <li><a href="#carta">Carta</a></li>
+      <li><a href="#formacion">Formación</a></li>
+    </ul>
+    <a class="ncta" href="cita.html">Pide tu cita</a>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-txt">
+    <div class="lbl">Colorimetría de autor · Málaga</div>
+    <h1 class="d"><span class="nw">Menos ruido,</span><span class="i nw">más intención.</span></h1>
+    <div class="hero-en">Less noise, more intention</div>
+    <div class="hero-foot">
+      <div class="hero-acts">
+        <a class="btn fill" href="cita.html">Calcula tu cita <span class="arrow">→</span></a>
+        <a class="btn l" href="#colecciones">Ver colecciones</a>
+      </div>
+      <p>Color, posticería y formación. Más de diez años dedicados a una idea: que el color más difícil no le cueste la salud al pelo.</p>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="img/w/femme-1.jpg" alt="Colección Femme Fatale de Adrián Pardo — Premio Picasso 2025" fetchpriority="high">
+    <div class="hero-cap"><b>Femme Fatale</b>Premio Picasso 2025</div>
+  </div>
+</section>
+
+<div class="marquee" aria-label="Reconocimientos">
+  <div class="marquee-t">
+    <span>Premio Picasso 2025 · Mejor colección femenina</span><span>Premio Picasso 2025 · Mejor maquillaje de vanguardia</span><span>Mercedes-Benz Fashion Week Madrid</span><span>Vogue España</span><span>Goldwell</span><span>Studio propio desde 2018</span>
+    <span aria-hidden="true">Premio Picasso 2025 · Mejor colección femenina</span><span aria-hidden="true">Premio Picasso 2025 · Mejor maquillaje de vanguardia</span><span aria-hidden="true">Mercedes-Benz Fashion Week Madrid</span><span aria-hidden="true">Vogue España</span><span aria-hidden="true">Goldwell</span><span aria-hidden="true">Studio propio desde 2018</span>
+  </div>
+</div>
+
+<!-- ══ MANIFIESTO ══ -->
+<section class="sec">
+  <div class="wrap man">
+    <figure class="ph rv"><img src="img/w/adrian-bn.jpg" alt="Adrián Pardo" loading="lazy"></figure>
+    <div>
+      <div class="lbl rv" style="color:var(--sage-d)">El studio</div>
+      <blockquote class="rv d1">No es una peluquería.<br><i>Es mi casa.</i></blockquote>
+      <p class="rv d2">Abrí el studio en 2018 con una idea sencilla: <strong>que nadie tenga que elegir entre el color que le apetece y tener el pelo sano.</strong></p>
+      <p class="rv d2">Trabajo con pocas personas al día. Antes de tocar nada miramos tu pelo, hablamos de lo que quieres y te digo con honestidad hasta dónde llegamos hoy. A veces la respuesta es esperar. Te lo diré igual.</p>
+      <p class="rv d2">Del studio salen las colecciones, las pasarelas y las clases. Y todo lo que aprendo fuera vuelve a tu silla.</p>
+      <div class="firma rv d3">Adrián Pardo<small>Colorista · Posticero · Formador</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COLECCIONES ══ -->
+<section class="dark sec" id="colecciones" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="sh">
+      <div><div class="lbl rv">Colecciones</div><h2 class="d rv d1">Trabajo<br><i>de autor.</i></h2></div>
+      <p class="rv d2">Cada colección empieza como una idea abstracta y termina con un equipo entero trabajando para que exista. De ahí salieron dos Premios Picasso en una misma noche.</p>
+    </div>
+
+    <article class="coll">
+      <div class="coll-h rv">
+        <span class="coll-n">I.</span>
+        <h3 class="coll-t">Femme Fatale</h3>
+        <div class="coll-a"><b>Premio Picasso 2025</b>Mejor colección femenina</div>
+      </div>
+      <div class="coll-g">
+        <figure class="c-a rv"><div class="ph"><img src="img/w/femme-2.jpg" alt="Femme Fatale" loading="lazy"></div></figure>
+        <figure class="c-b rv d1"><div class="ph"><img src="img/w/femme-4.jpg" alt="Femme Fatale" loading="lazy"></div></figure>
+        <figure class="c-c rv d2"><div class="ph"><img src="img/w/femme-3.jpg" alt="Femme Fatale" loading="lazy"></div><p class="coll-p" style="margin-top:1.4rem">Rojos, cerezas y magentas creados desde pigmentos puros y colores base.</p></figure>
+      </div>
+    </article>
+
+    <article class="coll">
+      <div class="coll-h rv">
+        <span class="coll-n">II.</span>
+        <h3 class="coll-t">Atlantis</h3>
+        <div class="coll-a"><b>Premio Picasso 2025</b>Mejor maquillaje de vanguardia</div>
+      </div>
+      <div class="coll-g">
+        <figure class="c-c rv"><div class="ph"><img src="img/w/atlantis-1.jpg" alt="Atlantis" loading="lazy"></div></figure>
+        <figure class="c-a rv d1"><div class="ph"><img src="img/w/atlantis-3.jpg" alt="Atlantis" loading="lazy"></div></figure>
+        <figure class="c-b rv d2"><div class="ph"><img src="img/w/atlantis-4.jpg" alt="Atlantis" loading="lazy"></div></figure>
+      </div>
+    </article>
+
+    <article class="coll" style="padding-bottom:clamp(6rem,12vw,12rem)">
+      <div class="coll-h rv">
+        <span class="coll-n">III.</span>
+        <h3 class="coll-t">KAOS</h3>
+        <div class="coll-a"><b>Primera colección</b>Publicada en prensa profesional</div>
+      </div>
+      <div class="coll-g">
+        <figure class="c-a rv"><div class="ph"><img src="img/w/kaos-1.jpg" alt="KAOS" loading="lazy"></div></figure>
+        <figure class="c-c rv d1"><div class="ph"><img src="img/w/kaos-2.jpg" alt="KAOS" loading="lazy"></div></figure>
+        <figure class="c-b rv d2"><div class="ph"><img src="img/w/kaos-3.jpg" alt="KAOS" loading="lazy"></div></figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ PRENSA ══ -->
+<section class="sec" id="prensa">
+  <div class="wrap">
+    <div class="sh">
+      <div><div class="lbl rv">Prensa y pasarela</div><h2 class="d rv d1">Fuera<br><i>del studio.</i></h2></div>
+      <p class="rv d2">Editoriales, portadas, alfombras rojas y la pasarela de Pilar Dalbat en la Mercedes-Benz Fashion Week Madrid con el equipo de Goldwell.</p>
+    </div>
+    <div class="press-names rv">
+      <span class="vg">VOGUE <small>España</small></span>
+      <span>GMARO</span>
+      <span class="i">MBFW Madrid</span>
+      <span>Goldwell</span>
+      <span class="i">Premios Picasso</span>
+    </div>
+    <div class="press-g">
+      <figure class="rv"><div class="ph contain"><img src="img/w/prensa-vogue.jpg" alt="Vogue España" loading="lazy"></div><div class="cap"><span>Vogue España</span><span>Campaña La Bienhecha</span></div></figure>
+      <figure class="rv d1"><div class="ph contain"><img src="img/w/prensa-gmaro.jpg" alt="GMARO" loading="lazy"></div><div class="cap"><span>GMARO</span><span>Editorial · foto David Gallardo</span></div></figure>
+      <figure class="rv d2"><div class="ph"><img src="img/w/editorial-glam.jpg" alt="Editorial" loading="lazy"></div><div class="cap"><span>Editorial</span><span>Glam</span></div></figure>
+      <figure class="rv d3"><div class="ph"><img src="img/w/prensa-kaos.jpg" alt="KAOS en prensa" loading="lazy"></div><div class="cap"><span>KAOS</span><span>Prensa profesional</span></div></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STUDIO: COLOR ══ -->
+<section class="sec" id="studio" style="background:var(--pale)">
+  <div class="wrap">
+    <div class="sh">
+      <div><div class="lbl rv">En el studio</div><h2 class="d rv d1">El color,<br><i>en tu pelo.</i></h2></div>
+      <p class="rv d2">Balayage, babylights, rubios globales, fantasía, correcciones. Lo de cada día, con la misma exigencia que una colección.</p>
+    </div>
+    <div class="work">
+      <figure class="w-v rv"><div class="ph"><video src="img/w/loop-color.mp4" poster="img/w/loop-color.jpg" autoplay muted loop playsinline preload="none" aria-label="Movimiento de un balayage"></video></div></figure>
+      <figure class="w-s rv d1"><div class="ph"><img src="img/w/color-1.jpg" alt="Color fantasía" loading="lazy"></div><div class="cap"><span>Fantasía</span><span>Elumen</span></div></figure>
+      <figure class="w-s rv d2"><div class="ph"><img src="img/w/color-2.jpg" alt="Balayage rubio" loading="lazy"></div><div class="cap"><span>Balayage</span><span>Rubio frío</span></div></figure>
+      <figure class="w-s rv d1"><div class="ph"><img src="img/w/color-4.jpg" alt="Mechas" loading="lazy"></div><div class="cap"><span>Mechas</span><span>Multitono</span></div></figure>
+      <figure class="w-s rv d2"><div class="ph"><img src="img/w/color-5.jpg" alt="Melena caramelo" loading="lazy"></div><div class="cap"><span>Color balancing</span><span>Caramelo</span></div></figure>
+    </div>
+    <div style="margin-top:3.5rem" class="rv"><a class="btn" href="cita.html#s=color">Calcula tu servicio de color <span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<!-- ══ POSTICERÍA ══ -->
+<section class="dark sec" id="posticeria">
+  <div class="wrap split">
+    <div class="mosaic rv">
+      <div class="ph tall"><img src="img/w/post-1.jpg" alt="Peluca rubia con ondas al agua" loading="lazy"></div>
+      <div class="ph"><img src="img/w/post-3.jpg" alt="Peluca fantasía" loading="lazy"></div>
+      <div class="ph"><img src="img/w/post-4.jpg" alt="Peluca en proceso" loading="lazy"></div>
+    </div>
+    <div>
+      <div class="lbl rv">Posticería</div>
+      <h2 class="d rv d1">Pelo que no<br><i>parece postizo.</i></h2>
+      <p class="rv d2">Diseño, coloración y montaje de pelucas, prótesis capilares y postizos a medida. Un oficio dentro del oficio, y una de las cosas que mejor sé hacer.</p>
+      <p class="rv d2">Trabajo el color con la misma exigencia que en una melena natural: el postizo tiene que integrarse con tu tono, tu luz y tu forma de moverte.</p>
+      <div class="tags rv d3"><span class="tag">Pelucas</span><span class="tag">Prótesis capilar</span><span class="tag">Postizos</span><span class="tag">Extensiones</span><span class="tag">Escena y caracterización</span></div>
+      <a class="btn l rv d3" href="cita.html#s=posticeria">Consultar posticería <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NOVIAS Y EVENTOS ══ -->
+<section class="sec" id="novias">
+  <div class="wrap">
+    <div class="sh">
+      <div><div class="lbl rv">Novias y eventos</div><h2 class="d rv d1">Para el día<br><i>que importa.</i></h2></div>
+      <p class="rv d2">Peinado, maquillaje y grooming. En el studio o donde estés: casa, hotel o localización. Con prueba previa y todo el tiempo que haga falta.</p>
+    </div>
+    <div class="nov">
+      <figure class="ph rv"><img src="img/w/novia-1.jpg" alt="Novia" loading="lazy"></figure>
+      <figure class="ph rv d1"><img src="img/w/novia-4.jpg" alt="Recogido" loading="lazy"></figure>
+      <figure class="ph rv d2"><img src="img/w/novia-2.jpg" alt="Peinado de invitada" loading="lazy"></figure>
+    </div>
+    <div style="margin-top:3.5rem" class="rv"><a class="btn" href="cita.html#s=peinado">Calcula tu evento <span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<!-- ══ CARTA ══ -->
+<section class="sec" id="carta" style="background:var(--pale)">
+  <div class="wrap">
+    <div class="sh">
+      <div><div class="lbl rv">Carta</div><h2 class="d rv d1">Servicios<br><i>y tiempos.</i></h2></div>
+      <p class="rv d2">El precio final te lo confirmo después de ver tu pelo. Si no sabes qué servicio es el tuyo, el cuestionario te lleva hasta él.</p>
+    </div>
+    <div class="carta" id="carta-list"></div>
+    <p class="carta-note" id="carta-note" style="margin:0 0 2.4rem"></p>
+    <div class="carta-cta rv">
+      <div>
+        <h3>Calcula tu tiempo y presupuesto en un minuto.</h3>
+        <p>Unas preguntas, tu estimación según tu largo, y me escribes por WhatsApp con todo ya contado.</p>
+      </div>
+      <a class="btn fill" href="cita.html">Empezar <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FORMACIÓN ══ -->
+<section class="dark sec" id="formacion">
+  <div class="wrap split">
+    <div>
+      <div class="lbl rv">Formación</div>
+      <h2 class="d rv d1">Enseño lo que<br><i>me costó aprender.</i></h2>
+      <p class="rv d2">Formo a peluqueros por toda España en colorimetría aplicada, decoloración con criterio y química capilar. Grupos reducidos y práctica real.</p>
+      <p class="rv d2">Trabajo con salones y equipos que quieren subir su carta de color, y colaboro con Goldwell en formación y pasarela.</p>
+      <div class="tags rv d3"><span class="tag">Colorimetría</span><span class="tag">Decoloración</span><span class="tag">Química capilar</span><span class="tag">In company</span><span class="tag">Goldwell</span></div>
+      <a class="btn l rv d3" href="https://wa.me/34677427724?text=Hola%20Adri%C3%A1n%2C%20me%20interesa%20tu%20formaci%C3%B3n.%20%C2%BFCu%C3%A1ndo%20hay%20plazas%3F">Avísame cuando haya plazas <span class="arrow">→</span></a>
+    </div>
+    <div class="mosaic rv">
+      <div class="ph tall vid"><video src="img/w/loop-formacion.mp4" poster="img/w/loop-formacion.jpg" autoplay muted loop playsinline preload="none" aria-label="Demostración de color con Goldwell"></video></div>
+      <div class="ph"><img src="img/w/backstage-1.jpg" alt="Adrián trabajando en backstage" loading="lazy"></div>
+      <div class="ph"><img src="img/w/backstage-2.jpg" alt="Adrián preparando una peluca" loading="lazy"></div>
+    </div>
+  </div>
+  <div class="wrap"><p class="credit">Backstage · foto @martindebrito</p></div>
+</section>
+
+<!-- ══ TESTIMONIOS ══ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sh"><div><div class="lbl rv">Opiniones</div><h2 class="d rv d1">Lo que<br><i>dicen.</i></h2></div></div>
+    <div class="tg">
+      <div class="t rv"><div class="s">★★★★★</div><p>«Mi pelo necesita un cuidado especial. Han tenido el mimo que necesitaba y han dado en la clave, y eso que no era fácil. Nunca reseño nada, pero esta vez más que merecida.»</p><cite>Sara Olivares<span>Coloración capilar</span></cite></div>
+      <div class="t rv d1"><div class="s">★★★★★</div><p>«Pude contar con él el día de mi boda, sin duda el mayor acierto. Todo el mundo me sigue preguntando por esa obra de arte que hizo con mi cabello.»</p><cite>Ana López Martín<span>Novias</span></cite></div>
+      <div class="t rv d2"><div class="s">★★★★★</div><p>«El peinado y el color, justo lo que quería. Los productos son de calidad y el ambiente muy acogedor, te hacen sentir como en casa.»</p><cite>Elisa Jiménez<span>Coloración capilar</span></cite></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACTO ══ -->
+<section class="dark sec" id="contacto">
+  <div class="wrap">
+    <div class="lbl rv" style="color:var(--sage)">Contacto</div>
+    <h2 class="d cta-big rv d1" style="margin-top:1.6rem">Cuéntame qué<br><i>tienes en mente.</i></h2>
+    <div class="cgrid">
+      <div class="rv d2">
+        <p class="muted" style="max-width:46ch;margin-bottom:2.6rem;font-size:1.02rem">Calcula tu servicio y me escribes por WhatsApp con todo contado. Si es un cambio grande, mándame una foto con luz natural y te digo con honestidad qué se puede hacer y en cuántas sesiones.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.8rem">
+          <a class="btn fill" href="cita.html">Calcula tu cita <span class="arrow">→</span></a>
+          <a class="btn l" href="https://wa.me/34677427724">WhatsApp directo</a>
+        </div>
+      </div>
+      <div class="rv d3">
+        <div class="cb"><b>Studio</b><p>Pasaje Esperanto 4, local 12<br>29007 Málaga</p></div>
+        <div class="cb"><b>Teléfono</b><p><a href="tel:+34677427724">677 427 724</a></p></div>
+        <div class="cb"><b>Correo</b><p><a href="mailto:info@adrianpardohairstudio.com">info@adrianpardohairstudio.com</a></p></div>
+        <div class="cb" style="border:0"><b>Horario</b>
+          <div class="hr"><span>Martes a viernes</span><span>10:00 – 19:00</span></div>
+          <div class="hr"><span>Sábado</span><span>10:00 – 13:30</span></div>
+          <div class="hr"><span>Domingo y lunes</span><span>Cerrado</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap ft">
+    <div>© 2026 Adrián Pardo Hair Studio · Málaga</div>
+    <div style="display:flex;gap:1.8rem">
+      <a href="https://www.instagram.com/adrian_pardo_hairstudio/">Instagram</a>
+      <a href="https://www.tiktok.com/@adrianpardohairstudio">TikTok</a>
+      <a href="https://www.facebook.com/AdrianPardoHair/">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" id="wa" href="https://wa.me/34677427724" aria-label="Escribir por WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.1c-.2-.5-.4-.5-.6-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5.1 4.4 1.9.8 2.6.9 3.5.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3c-.8-1.3-1.3-2.9-1.3-4.5C3.6 7.4 7.4 3.6 12 3.6S20.4 7.4 20.4 12 16.6 20.2 12 20.2z"/></svg>
+</a>
+
+<script src="assets/cita-data.js"></script>
+<script src="assets/cita-core.js"></script>
+<script>
+/* Carta: se pinta desde assets/cita-data.js (un solo sitio para precios y tiempos) */
+(function () {
+  const D = window.AP_CITA_DATA, C = window.AP_CITA, el = document.getElementById('carta-list');
+  if (!D || !C || !el) return;
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  el.innerHTML = D.menuGroups.map((g) => {
+    const items = Object.entries(D.menu).filter(([, it]) => it.group === g.id && it.carta !== false);
+    return `<div class="cg rv"><h3>${esc(g.label)}</h3>${items.map(([id, it]) => `
+      <div class="ci"><div class="n">${esc(it.label)}${it.hint ? `<small>${esc(it.hint)}</small>` : ''}</div>
+      <div class="tm">${C.menuTime(D, id)}</div><div class="p">${C.menuPrice(D, id).replace(/^desde /, '<small>desde</small>')}</div></div>`).join('')}</div>`;
+  }).join('');
+  const note = document.getElementById('carta-note');
+  if (note) note.textContent = D.menuNote + (D.loyalty ? ' ' + D.loyalty.menu : '');
+})();
+
+/* nav, WhatsApp, reveal */
+const hd = document.getElementById('hd'), wa = document.getElementById('wa');
+const onScroll = () => { const s = scrollY > innerHeight * .85; hd.classList.toggle('solid', s); wa.classList.toggle('on', s); };
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -5% 0px' });
+document.querySelectorAll('.rv').forEach((el) => io.observe(el));
+
+/* vídeos: solo se reproducen en pantalla, y nunca con «reducir movimiento» */
+const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const vio = new IntersectionObserver((es) => es.forEach((e) => {
+  const v = e.target; if (still) return v.pause();
+  if (e.isIntersecting) { if (v.preload === 'none') v.preload = 'auto'; v.play().catch(() => {}); } else v.pause();
+}), { threshold: .2 });
+document.querySelectorAll('video').forEach((v) => { v.removeAttribute('autoplay'); vio.observe(v); });
+</script>
+</body>
+</html>

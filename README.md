@@ -9,7 +9,7 @@ Está en GitHub Pages, fuera de Cloudflare. Comprueba a la vez la web principal 
 | | URL | Dónde |
 |---|---|---|
 | Principal | <https://adrian-pardo.pages.dev/> | Cloudflare Pages (repo `red3dev/adrian-pardo`) |
-| Respaldo | <https://adrian-pardo.netlify.app/> | Netlify, conectado al mismo repo (`netlify.toml`) |
+| Respaldo | <https://blancanieves00.github.io/adrian-pardo-gateway/web/> | GitHub Pages, carpeta `web/` de este repo |
 
 La sonda es `favicon.png` (monograma AP), que existe en los dos.
 
@@ -19,7 +19,9 @@ Enlaces profundos: `…/adrian-pardo-gateway/?ir=cita.html` lleva directo al cue
 
 Cambia `PRIMARY` y el enlace `#go-primary` en `index.html` a `https://www.adrianpardohairstudio.com/`.
 
-Si Netlify asigna otro subdominio, cambia `MIRROR` y el enlace `#go-mirror`.
+La copia `web/` la actualiza `push.sh` del repo de la web (`mock-web/`) en cada publicación: no se edita a mano.
+
+No usamos Netlify: con un repo de organización privado pide plan de pago.
 
 ## GitHub Pages
 
